@@ -36,22 +36,22 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className="max-w-4xl mx-auto font-SpaceGrotesk">
-      <div className="flex justify-between h-16 items-center px-4 mx-auto">
+      <div className="flex justify-between h-16 items-center md:mt-2 px-4 mx-auto">
         {/* Logo / Brand name */}
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-2xl font-bold text-foreground">Portfolio</span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex justify-center items-center space-x-4 flex-1">
+        <div className="hidden md:flex justify-center items-center space-x-6 flex-1">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-muted-foreground text-sm font-medium transition-colors hover:text-foreground relative group"
+              className="text-foreground text-sm font-medium transition-colors hover:text-muted-foreground relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-foreground rounded-full transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted-foreground rounded-full transition-all group-hover:w-full"></span>
             </a>
           ))}
         </div>
@@ -59,12 +59,12 @@ const Navigation: React.FC = () => {
         {/* Right side items: Social icons, Theme toggle, and Mobile menu */}
         <div className="flex items-center">
           {/* GitHub Icon */}
-          <Link href="/contact" className="">
-            <FaGithub className="w-4 h-4 mr-4" />
+          <Link href="/contact">
+            <FaGithub className="w-5 h-5 mr-4 hover:-translate-y-1 transition-all" />
           </Link>
           {/* Twitter Icon */}
           <Link href="/contact">
-            <FaXTwitter className="w-4 h-4 mr-4" />
+            <FaXTwitter className="w-5 h-5 mr-4 hover:-translate-y-1 transition-all" />
           </Link>
 
           {/* Theme Toggle Component */}
@@ -89,7 +89,7 @@ const Navigation: React.FC = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-muted-foreground text-sm font-medium transition-colors hover:text-foreground"
+                    className="text-foreground text-sm font-medium transition-colors hover:text-muted-foreground"
                     onClick={() => setIsOpen(false)} // Close sheet when a link is clicked
                   >
                     {item.name}
