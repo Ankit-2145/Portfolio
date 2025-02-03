@@ -5,48 +5,51 @@ import { BoxReveal } from "@/components/magicui/box-reveal";
 
 const Hero = () => {
   return (
-    <>
-      <div className="size-full max-w-5xl mx-auto items-center justify-center text-center overflow-hidden pt-24">
-        <BoxReveal boxColor={"text-foreground"} duration={0.5}>
-          <p className="text-[3.5rem] font-semibold">
-            Crafting Scalable & Interactive Web Experiences
-            <span className="text-[#5046e6]">.</span>
+    <main className="flex flex-col items-center justify-center text-center overflow-hidden space-y-4 pt-24 mx-10">
+      <BoxReveal boxColor={"#d7e3fc"} duration={0.5}>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+          Crafting Scalable & <br /> Interactive Web Experiences
+          <span className="text-[#d7e3fc]">.</span>
+        </h1>
+      </BoxReveal>
+
+      <BoxReveal boxColor={"#d7e3fc"} duration={0.5}>
+        <div className="mt-6 max-w-5xl">
+          <p className="text-base">
+            Hi, I&apos;m{" "}
+            <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
+              Ankit Sharma
+            </span>
+            , a passionate Frontend Developer specializing in{" "}
+            <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
+              {" "}
+              Next.js
+            </span>
+            ,
+            <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
+              {" "}
+              React
+            </span>
+            , and
+            <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
+              {" "}
+              Tailwind CSS
+            </span>
+            . I build high-performance, dynamic web applications with seamless
+            user experiences.
           </p>
-        </BoxReveal>
+        </div>
+      </BoxReveal>
 
-        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-          <h2 className="mt-[.5rem] text-[1rem]">
-            UI library for{" "}
-            <span className="text-[#5046e6]">Design Engineers</span>
-          </h2>
-        </BoxReveal>
-
-        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-          <div className="mt-6">
-            <p>
-              -&gt; 20+ free and open-source animated components built with
-              <span className="font-semibold text-[#5046e6]"> React</span>,
-              <span className="font-semibold text-[#5046e6]"> Typescript</span>,
-              <span className="font-semibold text-[#5046e6]">
-                {" "}
-                Tailwind CSS
-              </span>
-              , and
-              <span className="font-semibold text-[#5046e6]">
-                {" "}
-                Framer Motion
-              </span>
-              . <br />
-              -&gt; 100% open-source, and customizable. <br />
-            </p>
-          </div>
-        </BoxReveal>
-
-        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-          <Button className="mt-[1.6rem] bg-[#5046e6]">Explore</Button>
-        </BoxReveal>
-      </div>
-    </>
+      <BoxReveal boxColor={"#d7e3fc"} duration={0.5}>
+        <div className="mt-6">
+          <Button className="mr-4" variant="default">
+            📂 View My Work
+          </Button>
+          <Button variant="secondary">📜 Download Resume</Button>
+        </div>
+      </BoxReveal>
+    </main>
   );
 };
 

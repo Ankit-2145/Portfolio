@@ -9,6 +9,14 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(109deg, #FFA3EB 0%, #F3097C 33.78%, #6557FF 66.22%, #46B6FB 100%)",
+        "custom-gradient-129":
+          "linear-gradient(129deg, #f53e98 0%, #3624ff 100%)",
+        "custom-gradient-180":
+          "linear-gradient(180deg, #151329 0%, #0c0b0d 100%)",
+      },
       fontFamily: {
         SourceCodePro: ["Source Code Pro", "serif;"],
       },
@@ -53,11 +61,29 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        "color-1": "hsl(var(--color-1))",
+        "color-2": "hsl(var(--color-2))",
+        "color-3": "hsl(var(--color-3))",
+        "color-4": "hsl(var(--color-4))",
+        "color-5": "hsl(var(--color-5))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      animation: {
+        rainbow: "rainbow var(--speed, 2s) infinite linear",
+      },
+      keyframes: {
+        rainbow: {
+          "0%": {
+            "background-position": "0%",
+          },
+          "100%": {
+            "background-position": "200%",
+          },
+        },
       },
     },
   },
