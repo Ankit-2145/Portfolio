@@ -59,11 +59,11 @@ const Navigation: React.FC = () => {
         {/* Right side items: Social icons, Theme toggle, and Mobile menu */}
         <div className="flex items-center">
           {/* GitHub Icon */}
-          <Link href="/contact">
+          <Link href="https://github.com/Ankit-2145" target="_blank">
             <FaGithub className="w-5 h-5 mr-4 hover:-translate-y-1 transition-all" />
           </Link>
           {/* Twitter Icon */}
-          <Link href="/contact">
+          <Link href="https://x.com/Ankit__46" target="_blank">
             <FaXTwitter className="w-5 h-5 mr-4 hover:-translate-y-1 transition-all" />
           </Link>
 
