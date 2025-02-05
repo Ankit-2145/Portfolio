@@ -28,13 +28,13 @@ const Hero: React.FC = () => {
 
       {/* Introduction Section */}
       <BoxReveal boxColor="#d7e3fc" duration={0.5}>
-        <div className="mt-6 max-w-5xl">
+        <div className="mt-6 max-w-3xl">
           <p className="text-base">
             Hi, I&apos;m {/* Name with custom gradient styling */}
             <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
-              Ankit Sharma
+              Ankit Sharma{" "}
             </span>
-            , a passionate Frontend Developer specializing in{" "}
+            a passionate Frontend Developer specializing in{" "}
             {/* Skills with custom gradient styling */}
             <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
               {" "}
@@ -48,10 +48,8 @@ const Hero: React.FC = () => {
             , and
             <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
               {" "}
-              Tailwind CSS
+              Tailwind CSS.
             </span>
-            . I build high-performance, dynamic web applications with seamless
-            user experiences.
           </p>
         </div>
       </BoxReveal>

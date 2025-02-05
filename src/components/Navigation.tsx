@@ -18,11 +18,10 @@ interface NavItem {
 // Array of navigation items
 const navItems: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/services" },
-  { name: "Skills", href: "/work" },
-  { name: "Projects", href: "/pricing" },
-  { name: "Blog", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
 ];
 
 /**
