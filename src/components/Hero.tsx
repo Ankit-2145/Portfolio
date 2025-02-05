@@ -1,9 +1,10 @@
 "use client";
 
 import type React from "react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { BoxReveal } from "@/components/magicui/box-reveal";
-import { Ripple } from "@/components/magicui/ripple";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 /**
  * Hero Component
@@ -65,7 +66,11 @@ const Hero: React.FC = () => {
       </BoxReveal>
 
       {/* Background Animation */}
-      <Ripple />
+      <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+        )}
+      />
     </main>
   );
 };
