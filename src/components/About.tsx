@@ -17,7 +17,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="max-w-7xl mx-10 md:mx-auto text-left overflow-hidden space-y-4 md:p-10"
+      className="max-w-7xl mx-10 md:mx-auto text-left overflow-hidden space-y-4 md:p-10 mb-16"
     >
       <GlowingEffectBentoGrid />
     </section>

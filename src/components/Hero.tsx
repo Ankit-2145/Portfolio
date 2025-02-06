@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
               Ankit Sharma{" "}
             </span>
-            a passionate Frontend Developer specializing in{" "}
+            a Frontend Developer specializing in{" "}
             {/* Skills with custom gradient styling */}
             <span className="font-semibold text-transparent text-black bg-clip-text bg-custom-gradient">
               {" "}
