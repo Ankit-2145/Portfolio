@@ -9,7 +9,7 @@ export function SkillCard() {
   const { theme } = useTheme();
 
   return (
-    <div className="flex w-full flex-col gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2">
       {Object.entries(techStacks).map(([category, technologies]) => (
         <div key={category}>
           {/* Render Category Name */}

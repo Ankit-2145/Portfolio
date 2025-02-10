@@ -12,7 +12,7 @@ export const techStacks = {
   ],
   backendTechnologies: [
     { id: 1, label: "Node.js", image: "/nodejs.png" },
-    { id: 2, label: "Express", image: "/express.png" },
+    { id: 2, label: "Express", image: "/express.svg" },
     { id: 3, label: "Appwrite", image: "/appwrite.png" },
     { id: 4, label: "Firebase", image: "/firebase.png" },
   ],
