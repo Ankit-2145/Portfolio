@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-SourceCodePro antialiased scroll-smooth">
+      <body className="font-FiraCode antialiased scroll-smooth">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
