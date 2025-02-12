@@ -2,7 +2,7 @@
 
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
-// import Skills from "@/components/Skills";
+import Skills from "@/components/Skills";
 // import About from "@/components/About";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       {/* <About /> */}
-      {/* <Skills /> */}
+      <Skills />
     </>
   );
 }
