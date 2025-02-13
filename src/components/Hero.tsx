@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           <div className="flex justify-between items-center mb-4">
             <div>
               <TextAnimate
-                className="text-3xl sm:text-4xl md:text-8xl text-foreground font-semibold"
+                className="text-3xl sm:text-4xl md:text-8xl text-[#0099FF] font-semibold drop-shadow-[0_0_15px_#0099FF]"
                 as="h1"
                 animation="slideLeft"
                 by="character"

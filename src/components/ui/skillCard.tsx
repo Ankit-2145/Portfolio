@@ -13,7 +13,7 @@ const colorToRGB: { [key: string]: number[] } = {
   "bg-yellow-400": [250, 204, 21],
   "bg-blue-700": [29, 78, 216],
   "bg-cyan-400": [34, 211, 238],
-  "bg-black": [0, 0, 0],
+  "bg-white": [255, 255, 255],
   "bg-cyan-500": [6, 182, 212],
   "bg-green-600": [22, 163, 74],
   "bg-gray-800": [31, 41, 55],
@@ -23,19 +23,18 @@ const colorToRGB: { [key: string]: number[] } = {
   "bg-purple-600": [147, 51, 234],
   "bg-purple-500": [168, 85, 247],
   "bg-green-500": [34, 197, 94],
+  "bg-indigo-500": [99, 102, 241],
   "bg-indigo-600": [79, 70, 229],
+  "bg-red-600": [220, 38, 38],
+  "bg-cyan-600": [8, 145, 178],
 };
 
 export function SkillCard() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 place-content-center place-items-start gap-2">
+    <div>
       {Object.entries(techStacks).map(([category, technologies]) => (
         <div key={category}>
-          <h2 className="text-2xl font-semibold capitalize mb-4">
-            {category.replace(/([A-Z])/g, " $1").trim()}
-          </h2>
-
-          <div className="flex justify-center flex-auto flex-wrap">
+          <div className="flex flex-auto flex-wrap justify-center items-center">
             {(
               technologies as {
                 id: number;
@@ -101,7 +100,7 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 flex flex-col items-center justify-center p-4">
+      <div className="relative z-20 flex flex-col items-center justify-center p-2">
         <Image
           src={icon || "/placeholder.svg"}
           alt={title}
@@ -110,9 +109,9 @@ const Card = ({
           className="transition duration-200 group-hover/canvas-card:-translate-y-2"
         />
 
-        <h2 className="text-center text-white mt-2 text-sm font-medium opacity-0 group-hover/canvas-card:opacity-100 transition-opacity duration-200">
+        <small className="text-center text-white mt-2 text-sm font-medium opacity-0 group-hover/canvas-card:opacity-100 transition-opacity duration-200">
           {title}
-        </h2>
+        </small>
       </div>
     </div>
   );
