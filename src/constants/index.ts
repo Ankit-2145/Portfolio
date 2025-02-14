@@ -83,7 +83,7 @@ export const techStacks: TechStackCategory = {
       id: 24,
       label: "JWT",
       image: "/jwt.svg",
-      color: "bg-purple-500",
+      color: "bg-cyan-400",
     },
   ],
 };

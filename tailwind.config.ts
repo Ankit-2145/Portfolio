@@ -9,14 +9,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "custom-gradient":
-          "linear-gradient(109deg, #FFA3EB 0%, #F3097C 33.78%, #6557FF 66.22%, #46B6FB 100%)",
-        "custom-gradient-129":
-          "linear-gradient(129deg, #f53e98 0%, #3624ff 100%)",
-        "custom-gradient-180":
-          "linear-gradient(180deg, #151329 0%, #0c0b0d 100%)",
-      },
       fontFamily: {
         FiraCode: ["Fira Code", "serif;"],
         OpenSans: ["Open Sans", "serif;"],
@@ -79,6 +71,8 @@ export default {
         grid: "grid 15s linear infinite",
         "background-gradient":
           "background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite",
+        "shiny-text": "shiny-text 8s infinite",
+        gradient: "gradient 8s linear infinite",
       },
       keyframes: {
         rainbow: {
@@ -125,6 +119,19 @@ export default {
           "80%": {
             transform:
               "translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)))",
+          },
+        },
+        "shiny-text": {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shiny-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shiny-width)) 0",
+          },
+        },
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
           },
         },
       },

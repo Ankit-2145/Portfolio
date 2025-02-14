@@ -8,25 +8,25 @@ import Image from "next/image";
 
 // Color mapping for Tailwind classes to RGB values
 const colorToRGB: { [key: string]: number[] } = {
-  "bg-orange-600": [234, 88, 12],
-  "bg-blue-500": [59, 130, 246],
   "bg-yellow-400": [250, 204, 21],
-  "bg-blue-700": [29, 78, 216],
-  "bg-cyan-400": [34, 211, 238],
-  "bg-white": [255, 255, 255],
-  "bg-cyan-500": [6, 182, 212],
-  "bg-green-600": [22, 163, 74],
-  "bg-gray-800": [31, 41, 55],
-  "bg-pink-500": [236, 72, 153],
   "bg-yellow-500": [234, 179, 8],
-  "bg-gray-900": [17, 24, 39],
-  "bg-purple-600": [147, 51, 234],
   "bg-purple-500": [168, 85, 247],
+  "bg-purple-600": [147, 51, 234],
+  "bg-cyan-400": [34, 211, 238],
+  "bg-cyan-500": [6, 182, 212],
+  "bg-cyan-600": [8, 145, 178],
+  "bg-blue-500": [59, 130, 246],
+  "bg-blue-700": [29, 78, 216],
+  "bg-pink-500": [236, 72, 153],
+  "bg-gray-800": [31, 41, 55],
+  "bg-gray-900": [17, 24, 39],
   "bg-green-500": [34, 197, 94],
+  "bg-green-600": [22, 163, 74],
   "bg-indigo-500": [99, 102, 241],
   "bg-indigo-600": [79, 70, 229],
+  "bg-orange-600": [234, 88, 12],
   "bg-red-600": [220, 38, 38],
-  "bg-cyan-600": [8, 145, 178],
+  "bg-white": [255, 255, 255],
 };
 
 export function SkillCard() {

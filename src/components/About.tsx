@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { GlowingEffectBentoGrid } from "@/components/ui/bentoGrid";
 
 /**
  * About Component
@@ -18,9 +17,7 @@ const About: React.FC = () => {
     <section
       id="about"
       className="max-w-7xl mx-10 md:mx-auto text-left overflow-hidden md:p-10 mt-16"
-    >
-      <GlowingEffectBentoGrid />
-    </section>
+    ></section>
   );
 };
 
