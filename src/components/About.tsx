@@ -16,7 +16,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="max-w-7xl mx-10 md:mx-auto text-left overflow-hidden md:p-10 mt-16"
+      className="max-w-6xl mx-10 md:mx-auto text-left overflow-hidden md:p-10 mt-16"
     ></section>
   );
 };

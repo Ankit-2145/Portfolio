@@ -1,8 +1,5 @@
 "use client";
 
-// C 1200 -200, 3390 480, 400 580
-// C -2000 520, 0 -250, 800 100
-
 import type React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -74,7 +71,7 @@ const Hero: React.FC = () => {
       <main className="relative max-w-6xl mx-auto h-full mt-24 lg:mt-32">
         {/* Hero Section for Small Screens */}
         <div className="lg:hidden mx-4">
-          <div className="flex flex-col items-start space-y-4">
+          <div className="flex flex-col items-start md:items-center space-y-4">
             {/* Availability Badge */}
             <AnimatedGradientGroup />
             {/* Profile Badge */}
@@ -83,7 +80,7 @@ const Hero: React.FC = () => {
             <div className="flex gap-2">
               <HandWrittenTitle title="Fullstack" />
               <TextAnimate
-                className="text-3xl xs:text-4xl sm:text-5xl text-foreground font-medium"
+                className="text-3xl xs:text-4xl text-foreground font-medium"
                 as="h1"
                 animation="slideRight"
                 by="character"
@@ -93,13 +90,13 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Short Bio */}
-            <p className="text-base text-left text-muted-foreground max-w-md font-OpenSans font-normal leading-relaxed">
+            <p className="text-base text-justify md:text-center text-muted-foreground max-w-md font-OpenSans font-medium leading-relaxed">
               I write{" "}
-              <strong className="italic text-[#0068d6] dark:text-[#52A8FF]">
+              <strong className="text-[#0068d6] dark:text-[#52A8FF]">
                 maintainable, clean
               </strong>{" "}
               and{" "}
-              <strong className="italic text-[#7820bc] dark:text-[#BF7AF0]">
+              <strong className="text-[#7820bc] dark:text-[#BF7AF0]">
                 understandable code
               </strong>{" "}
               to ensure development is enjoyable and efficient.
@@ -131,13 +128,13 @@ const Hero: React.FC = () => {
           {/* Description and Animated Title Part 2 */}
           <div className="flex justify-evenly items-center">
             <div>
-              <p className="text-base text-muted-foreground text-justify max-w-sm font-OpenSans font-normal leading-relaxed mt-4">
+              <p className="text-base text-muted-foreground text-justify max-w-sm font-OpenSans font-medium leading-relaxed mt-4">
                 I write{" "}
-                <strong className="italic text-[#0068d6] dark:text-[#52A8FF]">
+                <strong className="text-[#0068d6] dark:text-[#52A8FF]">
                   maintainable, clean
                 </strong>{" "}
                 and{" "}
-                <strong className="italic text-[#7820bc] dark:text-[#BF7AF0]">
+                <strong className="text-[#7820bc] dark:text-[#BF7AF0]">
                   understandable code
                 </strong>{" "}
                 to ensure development is enjoyable and efficient.
