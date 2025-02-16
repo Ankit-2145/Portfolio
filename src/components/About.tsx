@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "motion/react";
 
 /**
  * About Component
@@ -17,7 +18,13 @@ const About: React.FC = () => {
     <section
       id="about"
       className="max-w-6xl mx-10 md:mx-auto text-left overflow-hidden md:p-10 mt-16"
-    ></section>
+    >
+      <motion.div
+        drag
+        whileHover={{ width: 200 }}
+        className="h-20 w-20 bg-fuchsia-600 rounded-md"
+      ></motion.div>
+    </section>
   );
 };
 

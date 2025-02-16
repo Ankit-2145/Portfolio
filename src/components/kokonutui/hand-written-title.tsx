@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import { useRef } from "react";
 interface HandWrittenTitleProps {
   title?: string;
@@ -9,7 +9,6 @@ interface HandWrittenTitleProps {
 
 export default function HandWrittenTitle({ title }: HandWrittenTitleProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
 
   const draw = {
     hidden: { pathLength: 0 },
@@ -30,7 +29,7 @@ export default function HandWrittenTitle({ title }: HandWrittenTitleProps) {
           height="100%"
           viewBox="0 0 1200 600"
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
           className="w-full h-full"
         >
           <title>Fullstack</title>
@@ -54,7 +53,7 @@ export default function HandWrittenTitle({ title }: HandWrittenTitleProps) {
           height="100%"
           viewBox="0 0 1200 600"
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
           className="w-full h-full"
         >
           <title>Fullstack</title>
@@ -75,7 +74,8 @@ export default function HandWrittenTitle({ title }: HandWrittenTitleProps) {
       <div className="relative z-10">
         <motion.h1
           className="text-3xl xs:text-4xl lg:text-7xl text-foreground font-medium"
-          animate={isInView}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           {title}

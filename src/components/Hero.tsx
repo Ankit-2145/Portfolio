@@ -2,14 +2,18 @@
 
 import type React from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { BriefcaseBusiness, ChevronRight, Download } from "lucide-react";
 import { AnimatedGradientText } from "./magicui/animated-gradient-text";
 import Image from "next/image";
 import HandWrittenTitle from "./kokonutui/hand-written-title";
+import { useRef } from "react";
 
 const Hero: React.FC = () => {
+  const constraintsRef = useRef(null);
+
   // Button Group Component for Reusability
   const ButtonGroup = () => (
     <>
@@ -54,7 +58,22 @@ const Hero: React.FC = () => {
 
   // Image Component for Reusability
   const MemojiGroup = () => (
-    <div className="w-32 h-32 rounded-full drop-shadow-[-10px_10px_15px_rgba(255,255,25)] dark:drop-shadow-[0_20px_20px_rgba(255,255,255,0.25)]">
+    <motion.div
+      drag
+      whileDrag={{ scale: 1.2 }}
+      dragConstraints={constraintsRef}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.4,
+        scale: {
+          type: "spring",
+          bounce: 0.5,
+          ease: "easeOut",
+        },
+      }}
+      className="w-32 h-32 rounded-full z-20 drop-shadow-[-10px_10px_15px_rgba(255,255,25)] dark:drop-shadow-[0_20px_20px_rgba(255,255,255,0.25)]"
+    >
       <Image
         src="/memoji2.svg"
         alt="memoji"
@@ -62,11 +81,14 @@ const Hero: React.FC = () => {
         width={120}
         height={120}
       />
-    </div>
+    </motion.div>
   );
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div
+      ref={constraintsRef}
+      className="relative w-full h-screen overflow-hidden"
+    >
       {/* Main Content Container */}
       <main className="relative max-w-6xl mx-auto h-full mt-24 lg:mt-32">
         {/* Hero Section for Small Screens */}
@@ -85,7 +107,7 @@ const Hero: React.FC = () => {
                 animation="slideRight"
                 by="character"
               >
-                Engineer
+                Developer
               </TextAnimate>
             </div>
 
@@ -148,7 +170,7 @@ const Hero: React.FC = () => {
                 animation="slideRight"
                 by="character"
               >
-                Engineer
+                Developer
               </TextAnimate>
             </div>
           </div>
