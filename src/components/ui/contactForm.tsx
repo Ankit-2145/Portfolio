@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,128 +14,202 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { Textarea } from "./textarea";
+import { Textarea } from "@/components/ui/textarea";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
-  name: z
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phoneNumber: z
     .string()
-    .min(2, {
-      message: "Username must be at least 2 characters",
-    })
-    .max(50),
-  email: z
-    .string()
-    .email({ message: "Invalid email address" })
-    .min(5, { message: "Email is required" }),
+    .regex(
+      /^(\+91|91)?[6-9]\d{9}$/,
+      "Invalid Indian phone number. Must be 10 digits, optionally prefixed with +91 or 91."
+    ),
   subject: z.string().optional(),
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters" }),
 });
 
-export function ContactForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+type FormValues = z.infer<typeof formSchema>;
 
-  const form = useForm<z.infer<typeof formSchema>>({
+interface SubmissionStatus {
+  type: "success" | "error" | null;
+  message: string;
+}
+
+export function ContactForm() {
+  const [submissionStatus, setSubmissionStatus] = useState<SubmissionStatus>({
+    type: null,
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
+      phoneNumber: "",
       subject: "",
       message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Form Data:", values);
-    setIsSubmitted(true);
-    form.reset();
+  useEffect(() => {
+    if (submissionStatus.type) {
+      const timer = setTimeout(() => {
+        setSubmissionStatus({ type: null, message: "" });
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [submissionStatus]);
+
+  async function onSubmit(values: FormValues) {
+    setIsSubmitting(true);
+    setSubmissionStatus({ type: null, message: "" });
+
+    const formData = new FormData();
+    formData.append("access_key", "6704c404-c1f4-4b31-853c-1075203c941f");
+    Object.entries(values).forEach(([key, value]) => {
+      if (value) formData.append(key, value);
+    });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmissionStatus({
+          type: "success",
+          message: "Your message has been sent successfully!",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.message || "Failed to send message");
+      }
+    } catch (error) {
+      setSubmissionStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "An unexpected error occurred",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
-    <div className="max-w-lg mx-auto bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-      {isSubmitted ? (
-        <p className="text-green-600 text-center mt-4">
-          ✅ Your message has been sent successfully!
-        </p>
-      ) : (
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            {/* Name */}
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="John Doe" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Email */}
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="your@email.com"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Subject (Optional) */}
-            <FormField
-              control={form.control}
-              name="subject"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Subject</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Subject (optional)" {...field} />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-
-            {/* Message */}
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Write your message..."
-                      rows={4}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Submit Button */}
-            <Button type="submit" className="w-full">
-              Send Message
-            </Button>
-          </form>
-        </Form>
+    <div className="max-w-lg mx-auto text-left bg-card p-6 rounded-lg shadow-lg">
+      {submissionStatus.type && (
+        <Alert
+          className={`mb-6 ${
+            submissionStatus.type === "success" ? "bg-green-400" : "bg-red-400"
+          }`}
+        >
+          <AlertTitle>
+            {submissionStatus.type === "success" ? "Success" : "Error"}
+          </AlertTitle>
+          <AlertDescription>{submissionStatus.message}</AlertDescription>
+        </Alert>
       )}
+
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="John Doe" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input type="email" placeholder="your@email.com" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="phoneNumber"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number</FormLabel>
+                <FormControl>
+                  <Input placeholder="+91 0123456789" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Subject</FormLabel>
+                <FormControl>
+                  <Input placeholder="Your subject" {...field} />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Write your message..."
+                    rows={4}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              "Send Message"
+            )}
+          </Button>
+        </form>
+      </Form>
     </div>
   );
 }
