@@ -109,7 +109,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="max-w-lg mx-auto text-left bg-card p-6 rounded-lg shadow-lg">
+    <div className="max-w-lg mx-auto text-left bg-card p-6 rounded-lg shadow-lg font-OpenSans">
       {submissionStatus.type && (
         <Alert
           className={`mb-6 ${
