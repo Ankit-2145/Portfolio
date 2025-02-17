@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { techStacks } from "@/constants";
+import { techStacks } from "@/constants/skills";
 import { CanvasRevealEffect } from "./canvas-reveal-effect";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";

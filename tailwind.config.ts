@@ -14,6 +14,10 @@ export default {
         OpenSans: ["Open Sans", "serif;"],
       },
       colors: {
+        highlightOne: "#0068d6",
+        darkHighlightOne: "#52A8FF",
+        highlightTwo: "#7820bc",
+        darkHighlightTwo: "#BF7AF0",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

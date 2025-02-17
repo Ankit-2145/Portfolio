@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
       <Image
         src="/memoji2.svg"
         alt="memoji"
-        className="rounded-b-full border-b-2 border-white/40 pointer-events-none"
+        className="rounded-b-full pointer-events-none"
         width={120}
         height={120}
       />
@@ -87,10 +87,10 @@ const Hero: React.FC = () => {
   return (
     <div
       ref={constraintsRef}
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full min-h-screen overflow-hidden"
     >
       {/* Main Content Container */}
-      <main className="relative max-w-6xl mx-auto h-full mt-24 lg:mt-32">
+      <main className="relative max-w-6xl mx-auto mt-24 lg:mt-32">
         {/* Hero Section for Small Screens */}
         <div className="lg:hidden mx-4">
           <div className="flex flex-col items-start md:items-center space-y-4">
@@ -114,11 +114,11 @@ const Hero: React.FC = () => {
             {/* Short Bio */}
             <p className="text-base text-justify md:text-center text-muted-foreground max-w-md font-OpenSans font-medium leading-relaxed">
               I write{" "}
-              <strong className="text-[#0068d6] dark:text-[#52A8FF]">
+              <strong className="text-highlightOne dark:text-darkHighlightOne">
                 maintainable, clean
               </strong>{" "}
               and{" "}
-              <strong className="text-[#7820bc] dark:text-[#BF7AF0]">
+              <strong className="text-highlightTwo dark:text-darkHighlightTwo">
                 understandable code
               </strong>{" "}
               to ensure development is enjoyable and efficient.
@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
           {/* Availability Badge */}
           <AnimatedGradientGroup />
           {/* Header Section */}
-          <div className="flex justify-evenly items-center">
+          <div className="flex justify-evenly items-center gap-8">
             <div className="flex items-center">
               <HandWrittenTitle title="Fullstack" />
               {/* Memoji Image */}
@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           {/* Description and Animated Title Part 2 */}
-          <div className="flex justify-evenly items-center">
+          <div className="flex justify-evenly items-center gap-8">
             <div>
               <p className="text-base text-muted-foreground text-justify max-w-sm font-OpenSans font-medium leading-relaxed mt-4">
                 I write{" "}

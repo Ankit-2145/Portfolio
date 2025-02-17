@@ -1,17 +1,17 @@
 import React from "react";
-import { SkillCard } from "./ui/skillCard";
 import Image from "next/image";
+import ProjectsSection from "./ui/projectsCard";
 
-const Skills: React.FC = () => {
+const Projects: React.FC = () => {
   return (
     <section
-      id="skills"
+      id="projects"
       className="max-w-6xl mx-4 md:mx-auto text-center mt-24 lg:mt-32"
     >
       <div className="flex justify-center">
         <div>
           <h2 className="text-3xl sm:text-4xl font-medium font-OpenSans">
-            What I Work With{" "}
+            Featured Projects{" "}
           </h2>
         </div>
         <div>
@@ -25,10 +25,10 @@ const Skills: React.FC = () => {
         </div>
       </div>
       <div className="my-8">
-        <SkillCard />
+        <ProjectsSection />
       </div>
     </section>
   );
 };
 
-export default Skills;
+export default Projects;
