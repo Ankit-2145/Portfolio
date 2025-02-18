@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="max-w-6xl mx-4 md:mx-auto text-left">
+    <section id="about" className="max-w-4xl mx-4 md:mx-auto">
       <div className="flex justify-center gap-4">
         <div>
           <h2 className="text-3xl sm:text-4xl font-medium font-OpenSans">
@@ -14,9 +14,10 @@ const About: React.FC = () => {
           </h2>
         </div>
         <motion.div
-          initial={{ opacity: 0, scale: 0, y: 0 }}
-          whileInView={{ opacity: 1, scale: 2, y: -10 }}
+          initial={{ opacity: 0, scale: 0, y: -10 }}
+          whileInView={{ opacity: 1, scale: 1.2, y: 0 }}
           transition={{
+            delay: 1,
             duration: 0.8,
             scale: {
               type: "spring",
@@ -30,13 +31,13 @@ const About: React.FC = () => {
             alt="About me memoji"
             width={36}
             height={36}
-            className="w-[30px] h-[30px] md:w-9 md:h-9 ml-2 rounded-full"
+            className="w-[30px] h-[30px] md:w-9 md:h-9"
           />
         </motion.div>
       </div>
       <div className="my-8">
-        <div className="space-y-4 text-justify max-w-5xl mx-auto">
-          <p className="text-base text-muted-foreground font-OpenSans font-medium leading-relaxed">
+        <div className="space-y-4 text-justify">
+          <p className="text-base text-muted-foreground font-OpenSans font-medium leading-loose">
             Hi, I&apos;m{" "}
             <strong className="text-lime-700 dark:text-lime-400">
               Ankit Sharma
@@ -50,11 +51,7 @@ const About: React.FC = () => {
               UI/UX Enthusiast
             </strong>{" "}
             with over a year of experience crafting engaging and
-            high-performance web applications.
-          </p>
-
-          <p className="text-base text-muted-foreground font-OpenSans font-medium leading-relaxed">
-            I specialize in building{" "}
+            high-performance web applications. I specialize in building{" "}
             <strong className="text-highlightOne dark:text-darkHighlightOne">
               sleek,
             </strong>{" "}
@@ -66,11 +63,7 @@ const About: React.FC = () => {
               user-friendly interfaces
             </strong>{" "}
             using modern technologies like React, Next.js, Tailwind CSS, and
-            Node.js.
-          </p>
-
-          <p className="text-base text-muted-foreground font-OpenSans font-medium leading-relaxed">
-            I have worked on multiple freelance projects, including{" "}
+            Node.js. I have worked on multiple freelance projects, including{" "}
             <strong className="text-violet-700 dark:text-violet-400">
               full-stack applications,
             </strong>{" "}
