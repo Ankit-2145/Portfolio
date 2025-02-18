@@ -3,6 +3,7 @@
 import type React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { TextReveal } from "@/components/magicui/text-reveal";
 
 const About: React.FC = () => {
   return (
@@ -36,8 +37,12 @@ const About: React.FC = () => {
         </motion.div>
       </div>
       <div className="my-8">
-        <div className="space-y-4 text-justify">
-          <p className="text-base text-muted-foreground font-OpenSans font-medium leading-loose">
+        <div className="z-10 flex min-h-64 items-center justify-center border bg-white dark:bg-black">
+          <TextReveal
+            text="
+Hi, I'm Ankit Sharma, a Frontend Developer and UI/UX Enthusiast with over a year of experience crafting engaging and high-performance web applications. I specialize in building sleek, scalable, and user-friendly interfaces using modern technologies like React, Next.js, Tailwind CSS, and Node.js. I have worked on multiple freelance projects, including full-stack applications, dynamic websites, LMS, CMS, and research-based portals. My goal is to create seamless digital experiences that are both visually appealing and functionally robust."
+          />
+          {/* <p className="text-base text-muted-foreground font-OpenSans font-medium leading-loose">
             Hi, I&apos;m{" "}
             <strong className="text-lime-700 dark:text-lime-400">
               Ankit Sharma
@@ -79,7 +84,7 @@ const About: React.FC = () => {
             </strong>{" "}
             My goal is to create seamless digital experiences that are both
             visually appealing and functionally robust.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
@@ -87,3 +92,32 @@ const About: React.FC = () => {
 };
 
 export default About;
+
+// "use client";
+
+// import { TextReveal } from "@/components/magicui/text-reveal";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import { useRef } from "react";
+
+// export default function Moto() {
+//   const ref = useRef(null);
+//   const { scrollYProgress } = useScroll({
+//     target: ref,
+//     offset: ["start end", "end start"], // Animation starts when the section enters the viewport
+//   });
+
+//   // Control speed (similar to `data-speed`)
+//   const y = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]); // Adjust speed effect
+
+//   return (
+//     <motion.div
+//       ref={ref}
+//       style={{ y }} // Apply smooth motion
+//       className="z-10 flex min-h-64 items-center justify-center border bg-white dark:bg-black"
+//     >
+//       <TextReveal text="Design. Code. Launch." />
+//     </motion.div>
+//   );
+// }
+
+// Beyond design. Beyond development. Beyond limits.
