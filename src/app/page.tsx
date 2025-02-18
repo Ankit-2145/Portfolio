@@ -1,5 +1,6 @@
 "use client";
 
+import { ReactLenis } from "lenis/react";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import Skills from "@/components/Skills";
@@ -12,14 +13,16 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navigation />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Feedbacks />
-      <Contact />
-      <Footer />
+      <ReactLenis root>
+        <Navigation />
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Feedbacks />
+        <Contact />
+        <Footer />
+      </ReactLenis>
     </>
   );
 }
