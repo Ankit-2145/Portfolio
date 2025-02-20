@@ -130,7 +130,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Short Bio */}
-            <p className="text-base text-left md:text-center text-muted-foreground max-w-md font-OpenSans font-normal leading-relaxed">
+            <p className="text-base text-left md:text-center text-secondary-foreground dark:text-muted-foreground max-w-md font-OpenSans font-normal leading-relaxed">
               I write{" "}
               <span className="font-medium italic text-highlightOne dark:text-darkHighlightOne">
                 maintainable, clean
@@ -175,7 +175,7 @@ const Hero: React.FC = () => {
           {/* Description and Animated Title Part 2 */}
           <div className="flex justify-evenly items-center gap-8">
             <div>
-              <p className="text-base text-muted-foreground text-left max-w-sm font-OpenSans font-normal leading-relaxed mt-4">
+              <p className="text-base text-secondary-foreground dark:text-muted-foreground text-left max-w-sm font-OpenSans font-normal leading-relaxed mt-4">
                 I write{" "}
                 <span className="font-medium italic text-[#0068d6] dark:text-[#52A8FF]">
                   maintainable, clean

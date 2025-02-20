@@ -20,7 +20,7 @@ const About: React.FC = () => {
           </h2>
         </div>
         <div className="max-w-2xl">
-          <p className="text-base text-muted-foreground text-left font-medium leading-relaxed mt-4 md:mt-0">
+          <p className="text-base text-secondary-foreground dark:text-muted-foreground text-left font-normal leading-relaxed mt-4 md:mt-0">
             Hello, I&apos;m{" "}
             <span className="font-medium italic text-lime-700 dark:text-lime-400">
               Ankit Sharma
@@ -51,14 +51,14 @@ const About: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center mt-16 lg:mt-24 max-w-6xl mx-4 xl:mx-auto gap-8 lg:gap-0">
         <div className="order-2 lg:order-1">
-          <div className="border-2 rounded-3xl p-4 text-muted-foreground">
+          <div className="border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
             <h3 className="text-xl">Front-end</h3>
             <p className="text-sm mt-4 font-FiraCode">
               HTML / JavaScript / TypeScript / React / Nextjs / Redux Toolkit
             </p>
           </div>
           <div className="flex items-center mt-4">
-            <div className="w-1/2 border-2 rounded-3xl p-4 text-muted-foreground">
+            <div className="w-1/2 border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
               <h3 className="text-xl">Styles</h3>
               <p className="text-sm mt-4 font-FiraCode">
                 Tailwind CSS / SCSS / Material-UI / ShadcnUI
@@ -77,7 +77,7 @@ const About: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="border-2 rounded-3xl p-4 text-muted-foreground mt-4">
+          <div className="border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
             <h3 className="text-xl">Back-end</h3>
             <p className="text-sm mt-4 font-FiraCode">
               Node.js / Express / MongoDB / Firebase / RESTful APIs
@@ -85,7 +85,7 @@ const About: React.FC = () => {
           </div>
           <div className="flex items-center gap-4">
             <div className="w-full">
-              <p className="text-sm text-muted-foreground text-left font-normal leading-relaxed">
+              <p className="text-sm text-secondary-foreground dark:text-muted-foreground text-left font-normal leading-relaxed">
                 Some of my{" "}
                 <span className="font-medium italic text-blue-700 dark:text-blue-400">
                   favourite technologies,{" "}
@@ -100,7 +100,7 @@ const About: React.FC = () => {
                 that I worked with
               </p>
             </div>
-            <div className="w-full border-2 rounded-3xl p-4 text-muted-foreground mt-4">
+            <div className="w-full border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
               <h3 className="text-xl">DevOps</h3>
               <p className="text-sm mt-4 font-FiraCode">
                 Git / GitHub / Netlify / Vercel

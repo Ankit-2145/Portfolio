@@ -27,7 +27,9 @@ const ProjectCard: React.FC<Project> = ({
             </span>
           ))}
         </div>
-        <p className="text-sm text-muted-foreground my-16">{description}</p>
+        <p className="text-sm text-secondary-foreground dark:text-muted-foreground my-16">
+          {description}
+        </p>
         <div className="w-fit flex items-center gap-2">
           <Link href={githubRepo} target="_blank" rel="noopener noreferrer">
             <FaGithub className="h-10 w-10 rounded-full p-2" />
