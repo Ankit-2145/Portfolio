@@ -13,7 +13,7 @@ const About: React.FC = () => {
       id="about"
       className="min-h-screen bg-[#F5F5F5] dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32"
     >
-      <div className="max-w-6xl lg:mx-auto flex flex-col md:flex-row justify-between items-start gap-4 mx-4">
+      <div className="max-w-6xl xl:mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 mx-4">
         <div>
           <h2 className="text-lg font-normal leading-relaxed">
             📂... /About me ...
@@ -49,7 +49,7 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center mt-16 lg:mt-24 max-w-6xl mx-4 lg:mx-auto gap-8 lg:gap-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center mt-16 lg:mt-24 max-w-6xl mx-4 xl:mx-auto gap-8 lg:gap-0">
         <div className="order-2 lg:order-1">
           <div className="border-2 rounded-3xl p-4 text-muted-foreground">
             <h3 className="text-xl">Front-end</h3>

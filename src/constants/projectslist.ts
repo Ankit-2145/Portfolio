@@ -12,7 +12,13 @@ export const projects: Project[] = [
     title: "Learning Resource Platform",
     description:
       "A platform for students to access learning materials, animations, and study resources.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Firebase",
+      "GSAP",
+    ],
     liveLink: "https://your-live-link.com",
     githubRepo: "https://github.com/your-repo",
     image: "/project1.png",
