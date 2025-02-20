@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
   const ButtonGroup = () => (
     <>
       <Button
-        className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 mr-4 border bg-[#121212] rounded-full overflow-hidden text-white text-center"
+        className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 mr-4 border bg-white rounded-full overflow-hidden text-black text-center"
         variant="outline"
         aria-label="Download Resume"
       >
@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           {/* Icon for Work Button */}
           <BriefcaseBusiness /> View My Work
         </span>
-        <div className="inline-flex items-center gap-2 bg-white text-[#121212] z-10 absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
+        <div className="inline-flex items-center gap-2 text-white bg-[#121212] z-10 absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
           {/* Icon for Work Button */}
           <BriefcaseBusiness /> View My Work
         </div>
@@ -132,13 +132,13 @@ const Hero: React.FC = () => {
             {/* Short Bio */}
             <p className="text-base text-left md:text-center text-muted-foreground max-w-md font-OpenSans font-normal leading-relaxed">
               I write{" "}
-              <strong className="text-highlightOne dark:text-darkHighlightOne">
+              <span className="font-medium italic text-highlightOne dark:text-darkHighlightOne">
                 maintainable, clean
-              </strong>{" "}
+              </span>{" "}
               and{" "}
-              <strong className="text-highlightTwo dark:text-darkHighlightTwo">
+              <span className="font-medium italic text-highlightTwo dark:text-darkHighlightTwo">
                 understandable code
-              </strong>{" "}
+              </span>{" "}
               to ensure development is enjoyable and efficient.
             </p>
 
@@ -177,13 +177,13 @@ const Hero: React.FC = () => {
             <div>
               <p className="text-base text-muted-foreground text-left max-w-sm font-OpenSans font-normal leading-relaxed mt-4">
                 I write{" "}
-                <strong className="text-[#0068d6] dark:text-[#52A8FF]">
+                <span className="font-medium italic text-[#0068d6] dark:text-[#52A8FF]">
                   maintainable, clean
-                </strong>{" "}
+                </span>{" "}
                 and{" "}
-                <strong className="text-[#7820bc] dark:text-[#BF7AF0]">
+                <span className="font-medium italic text-[#7820bc] dark:text-[#BF7AF0]">
                   understandable code
-                </strong>{" "}
+                </span>{" "}
                 to ensure development is enjoyable and efficient.
               </p>
             </div>
