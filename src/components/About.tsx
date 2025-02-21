@@ -11,12 +11,12 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[#F5F5F5] dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32"
+      className="min-h-screen bg-white dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32"
     >
       <div className="max-w-6xl xl:mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 mx-4">
         <div>
-          <h2 className="text-lg font-normal leading-relaxed">
-            📂... /About me ...
+          <h2 className="text-xl font-medium leading-relaxed">
+            📁. . . /About me . . .
           </h2>
         </div>
         <div className="max-w-2xl">
@@ -50,17 +50,17 @@ const About: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center mt-16 lg:mt-24 max-w-6xl mx-4 xl:mx-auto gap-8 lg:gap-0">
-        <div className="order-2 lg:order-1">
-          <div className="border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+        <div className="order-2 lg:order-1 font-medium">
+          <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
             <h3 className="text-xl">Front-end</h3>
-            <p className="text-sm mt-4 font-FiraCode">
+            <p className="text-sm mt-4 font-FiraCode font-normal">
               HTML / JavaScript / TypeScript / React / Nextjs / Redux Toolkit
             </p>
           </div>
           <div className="flex items-center mt-4">
-            <div className="w-1/2 border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+            <div className="w-1/2 border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground">
               <h3 className="text-xl">Styles</h3>
-              <p className="text-sm mt-4 font-FiraCode">
+              <p className="text-sm mt-4 font-FiraCode font-normal">
                 Tailwind CSS / SCSS / Material-UI / ShadcnUI
               </p>
             </div>
@@ -77,15 +77,15 @@ const About: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+          <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
             <h3 className="text-xl">Back-end</h3>
-            <p className="text-sm mt-4 font-FiraCode">
+            <p className="text-sm mt-4 font-FiraCode font-normal">
               Node.js / Express / MongoDB / Firebase / RESTful APIs
             </p>
           </div>
           <div className="flex items-center gap-4">
             <div className="w-full">
-              <p className="text-sm text-secondary-foreground dark:text-muted-foreground text-left font-normal leading-relaxed">
+              <p className="text-base text-secondary-foreground dark:text-muted-foreground text-left font-normal leading-relaxed">
                 Some of my{" "}
                 <span className="font-medium italic text-blue-700 dark:text-blue-400">
                   favourite technologies,{" "}
@@ -100,9 +100,9 @@ const About: React.FC = () => {
                 that I worked with
               </p>
             </div>
-            <div className="w-full border-2 rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+            <div className="w-full border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
               <h3 className="text-xl">DevOps</h3>
-              <p className="text-sm mt-4 font-FiraCode">
+              <p className="text-sm mt-4 font-FiraCode font-normal">
                 Git / GitHub / Netlify / Vercel
               </p>
             </div>
@@ -114,7 +114,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, scale: 0, y: -10 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{
-            delay: 1,
+            delay: 0.5,
             duration: 0.8,
             scale: {
               type: "spring",

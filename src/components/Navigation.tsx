@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   return (
-    <nav className="font-OpenSans bg-[#F5F5F5] dark:bg-[#121212]">
+    <nav className="font-OpenSans bg-white dark:bg-[#121212]">
       <div className="max-w-6xl mx-auto flex justify-between h-16 items-center md:pt-2 px-4">
         {/* Logo / Brand name */}
         <Link href="/" className="flex items-center space-x-2">
@@ -43,14 +43,14 @@ const Navigation: React.FC = () => {
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex justify-center items-center space-x-10 flex-1">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-foreground text-sm font-normal transition-colors hover:text-muted-foreground relative group"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted-foreground rounded-full transition-all group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -75,14 +75,14 @@ const Navigation: React.FC = () => {
             <SheetContent className="bg-[#F5F5F5] dark:bg-[#121212]" side="top">
               <div className="flex flex-col space-y-4 mt-4">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="text-foreground text-base font-normal transition-colors hover:text-muted-foreground"
                     onClick={() => setIsOpen(false)} // Close sheet when a link is clicked
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </SheetContent>

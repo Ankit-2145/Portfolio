@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
   return (
     <div
       ref={constraintsRef}
-      className="relative w-full min-h-screen overflow-hidden bg-[#F5F5F5] dark:bg-[#121212]"
+      className="relative w-full min-h-screen overflow-hidden bg-white dark:bg-[#121212]"
     >
       {/* Main Content Container */}
       <main className=" mt-24 lg:mt-32">
@@ -157,7 +157,7 @@ const Hero: React.FC = () => {
             <div className="flex items-center">
               {/* Animated Title Part 1 */}
               <TextAnimate
-                className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl text-foreground font-medium"
+                className="text-3xl sm:text-4xl md:text-7xl text-foreground font-medium"
                 as="h1"
                 animation="slideUp"
                 by="word"
@@ -190,7 +190,7 @@ const Hero: React.FC = () => {
             <div>
               {/* Animated Title Part 2 */}
               <TextAnimate
-                className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl text-foreground font-medium"
+                className="text-3xl sm:text-4xl md:text-7xl text-foreground font-medium"
                 as="h1"
                 animation="slideUp"
                 by="word"

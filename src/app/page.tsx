@@ -3,7 +3,6 @@
 import { ReactLenis } from "lenis/react";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
-import Skills from "@/components/Skills";
 import About from "@/components/About";
 import Projects from "@/components/projects";
 import Feedbacks from "@/components/Feedbacks";
@@ -24,7 +23,6 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
-      <Skills />
       <Feedbacks />
       <Contact />
       <Footer />

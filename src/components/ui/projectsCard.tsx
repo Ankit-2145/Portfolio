@@ -16,7 +16,7 @@ const ProjectCard: React.FC<Project> = ({
   return (
     <motion.div className="flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse lg:items-start gap-6 first:mt-0 mt-20 lg:mt-44">
       <div className="max-w-sm">
-        <h3 className="text-foreground text-xl">{title}</h3>
+        <h3 className="text-foreground text-xl font-medium">{title}</h3>
         <div className="flex flex-wrap gap-2 mt-8">
           {technologies.map((tech, index) => (
             <span
@@ -27,7 +27,7 @@ const ProjectCard: React.FC<Project> = ({
             </span>
           ))}
         </div>
-        <p className="text-sm text-secondary-foreground dark:text-muted-foreground my-16">
+        <p className="text-sm font-normal text-secondary-foreground dark:text-muted-foreground my-16">
           {description}
         </p>
         <div className="w-fit flex items-center gap-2">

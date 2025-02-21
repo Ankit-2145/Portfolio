@@ -6,26 +6,18 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="max-w-6xl mx-4 md:mx-auto text-center mt-24 lg:mt-32"
+      className="min-h-screen bg-white dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32"
     >
-      <div className="flex justify-center">
+      <div className="max-w-6xl mx-4 lg:mx-auto flex justify-between items-center">
         <div>
           <h2 className="text-3xl sm:text-4xl font-medium font-OpenSans">
             Let&apos;s Connect{" "}
           </h2>
         </div>
+
         <div>
-          <Image
-            src="/memoji_laptop.svg"
-            alt="skills memoji with laptop"
-            width={36}
-            height={36}
-            className="w-[30px] h-[30px] md:w-9 md:h-9 ml-2"
-          />
+          <ContactForm />
         </div>
-      </div>
-      <div className="my-8">
-        <ContactForm />
       </div>
     </section>
   );

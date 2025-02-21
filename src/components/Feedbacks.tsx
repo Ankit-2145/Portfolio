@@ -1,32 +1,21 @@
 import React from "react";
-import Image from "next/image";
-import { FeedbacksCard } from "./ui/feedbacksCard";
+import { testimonialsData } from "@/constants/feedbackslist";
+import { TestimonialCarousel } from "@/components/ui/testimonials";
 
 const Feedbacks: React.FC = () => {
   return (
-    <section
-      id="skills"
-      className="max-w-6xl mx-4 md:mx-auto text-center mt-24 lg:mt-32"
-    >
-      <div className="flex justify-center">
+    <section className="h-1/2 bg-white dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32">
+      <div className="max-w-6xl lg:mx-auto flex flex-col md:flex-row justify-center items-center gap-4 mx-4">
         <div>
-          <h2 className="text-3xl sm:text-4xl font-medium font-OpenSans">
-            What People Say{" "}
+          <h2 className="text-xl font-medium leading-relaxed">
+            . . . /What People Say . . .
           </h2>
         </div>
-        <div>
-          <Image
-            src="/memoji_laptop.svg"
-            alt="skills memoji with laptop"
-            width={36}
-            height={36}
-            className="w-[30px] h-[30px] md:w-9 md:h-9 ml-2"
-          />
-        </div>
       </div>
-      <div>
-        <FeedbacksCard />
-      </div>
+      <TestimonialCarousel
+        testimonials={testimonialsData}
+        className="max-w-2xl"
+      />
     </section>
   );
 };
