@@ -35,7 +35,7 @@ export const SocialButtons = () => {
           rel="noopener noreferrer"
         >
           <Button
-            className="relative group rounded-full text-xs font-OpenSans border-gray-300 bg-[#F5F5F5] dark:bg-[#121212]"
+            className="relative group rounded-full text-xs font-OpenSans border-gray-300 bg-white dark:bg-[#121212] hover:bg-transparent"
             aria-label={`${link.name} link`}
             variant="outline"
           >

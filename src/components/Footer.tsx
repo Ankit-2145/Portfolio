@@ -1,6 +1,9 @@
-import { Mail } from "lucide-react";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { Download, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Circle, SmallerCircle } from "@/components/ui/circle";
+import { SocialButtons } from "@/components/ui/socialButtons";
 
 interface FooterItem {
   name: string;
@@ -30,7 +33,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white dark:bg-[#121212] font-OpenSans pt-24 lg:pt-32 overflow-hidden">
+    <footer className="relative bg-white dark:bg-[#121212] font-OpenSans pt-24 lg:pt-32 overflow-hidden z-20">
+      <SmallerCircle />
+      <Circle className="lg:block" />
       <div className="max-w-6xl xl:mx-auto mx-4 flex flex-col lg:flex-row-reverse justify-between gap-4">
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
@@ -41,14 +46,34 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-foreground text-base lg:text-sm font-normal transition-colors hover:text-muted-foreground relative group"
+                className="text-foreground text-base lg:text-sm font-normal transition-colors relative group"
               >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted-foreground rounded-full transition-all group-hover:w-full"></span>
+                <span className="relative flex overflow-hidden">
+                  <div className="inline-flex gap-2 translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-12">
+                    <span>{item.name}</span>
+                  </div>
+                  <div className="inline-flex gap-2 absolute translate-y-[130%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
+                    <span>{item.name}</span>
+                  </div>
+                </span>
               </Link>
             ))}
           </div>
-          <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-16">
+          <Button
+            className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 border bg-[#121212] rounded-full overflow-hidden text-white text-center mt-8"
+            variant="outline"
+            aria-label="Download Resume"
+          >
+            <span className="inline-flex items-center gap-2 translate-y-0 group-hover:-translate-y-12 group-hover:opacity-0 transition-all duration-300">
+              {/* Icon for Resume Download Button */}
+              <Download /> Download Resume
+            </span>
+            <div className="inline-flex items-center gap-2 text-black bg-white z-10 absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
+              {/* Icon for Resume Download Button */}
+              <Download /> Download Resume
+            </div>
+          </Button>
+          <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-8">
             <h3 className="text-xl">Let&apos;s Talk</h3>
             <p
               className="inline-flex items-center gap-2 text-sm mt-4 font-FiraCode font-normal text-foreground hover:cursor-pointer hover:underline"
@@ -60,23 +85,26 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div>
-          <h1 className="text-6xl lg:text-9xl font-medium leading-relaxed ml-6 lg:ml-0">
-            Ankit
-          </h1>
-          <div className="flex justify-evenly items-center gap-0 lg:gap-16">
-            <p className="text-xl text-secondary-foreground dark:text-muted-foreground text-left font-medium leading-relaxed">
-              Frontend
-              <br /> Developer
-            </p>
-            <h3 className="text-6xl lg:text-9xl font-medium leading-relaxed">
-              Sharma
-            </h3>
+        <div className="font-FiraCode">
+          <div className="flex flex-col">
+            <h1 className="text-6xl lg:text-9xl font-medium leading-tight">
+              Ankit
+            </h1>
+            <div className="flex justify-between items-start">
+              <p className="text-xl text-secondary-foreground dark:text-muted-foreground font-medium leading-relaxed mt-2">
+                Frontend
+                <br /> Developer
+              </p>
+              <h1 className="text-6xl lg:text-9xl font-medium leading-tight">
+                Sharma
+              </h1>
+            </div>
           </div>
         </div>
       </div>
-      <div className="text-sm text-center border-t-2 py-2 text-secondary-foreground whitespace-nowrap mt-40">
-        <div>&copy; copyright {currentYear}</div>
+      <SocialButtons />
+      <div className="text-sm text-center py-2 text-secondary-foreground whitespace-nowrap mt-20">
+        <div>&copy; {currentYear} Ankit Sharma. All rights reserved.</div>
       </div>
     </footer>
   );
