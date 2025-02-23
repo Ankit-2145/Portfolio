@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 interface SocialLinks {
   name: string;
@@ -17,39 +18,61 @@ const socialLinks: SocialLinks[] = [
     icon: <FaLinkedin />,
   },
   { name: "Twitter", url: "https://x.com/Ankit__46", icon: <FaXTwitter /> },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/ankit.sharma._._/",
-    icon: <FaInstagram />,
-  },
 ];
 
 export const SocialButtons = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -10 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.5,
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
-    <div className="flex flex-wrap md:justify-center items-center space-x-2 md:space-x-8 gap-2 md:gap-8 mt-24 mx-4 md:mx-auto">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="flex flex-wrap md:justify-center items-center space-x-2 md:space-x-8 gap-2 md:gap-8 mt-24 mx-4 md:mx-auto"
+    >
       {socialLinks.map((link) => (
-        <Link
-          key={link.name}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button
-            className="relative group rounded-full text-xs font-OpenSans border-gray-300 bg-white dark:bg-[#121212] hover:bg-transparent"
-            aria-label={`${link.name} link`}
-            variant="outline"
-          >
-            <span className="relative flex overflow-hidden">
-              <div className="inline-flex gap-2 translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-12">
-                <span>{link.name}</span> <span>{link.icon}</span>
-              </div>
-              <div className="inline-flex gap-2 absolute translate-y-[130%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
-                <span>{link.name}</span> <span>{link.icon}</span>
-              </div>
-            </span>
-          </Button>
-        </Link>
+        <motion.div key={link.name} variants={item}>
+          <Link href={link.url} target="_blank" rel="noopener noreferrer">
+            <Button
+              className="relative group rounded-full text-xs font-OpenSans border-gray-300 bg-white dark:bg-[#121212] hover:bg-transparent"
+              aria-label={`${link.name} link`}
+              variant="outline"
+            >
+              <span className="relative flex overflow-hidden">
+                <div className="inline-flex gap-2 translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-12">
+                  <span>{link.name}</span> <span>{link.icon}</span>
+                </div>
+                <div className="inline-flex gap-2 absolute translate-y-[130%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
+                  <span>{link.name}</span> <span>{link.icon}</span>
+                </div>
+              </span>
+            </Button>
+          </Link>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };

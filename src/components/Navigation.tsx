@@ -46,10 +46,16 @@ const Navigation: React.FC = () => {
             <Link
               key={item.name}
               href={item.href}
-              className="text-foreground text-sm font-normal transition-colors hover:text-muted-foreground relative group"
+              className="text-foreground text-base lg:text-sm font-normal transition-colors relative group"
             >
-              {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted-foreground rounded-full transition-all group-hover:w-full"></span>
+              <span className="relative flex overflow-hidden">
+                <div className="inline-flex gap-2 translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-12">
+                  <span>{item.name}</span>
+                </div>
+                <div className="inline-flex gap-2 absolute translate-y-[130%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
+                  <span>{item.name}</span>
+                </div>
+              </span>
             </Link>
           ))}
         </div>

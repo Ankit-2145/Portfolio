@@ -4,6 +4,7 @@ import { projects, Project } from "@/constants/projectslist";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { Magnetic } from "@/components/ui/magnetic";
 
 const ProjectCard: React.FC<Project> = ({
   title,
@@ -13,6 +14,7 @@ const ProjectCard: React.FC<Project> = ({
   githubRepo,
   image,
 }) => {
+  const springOptions = { bounce: 0.1 };
   return (
     <motion.div className="flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse lg:items-start gap-6 first:mt-0 mt-20 lg:mt-44">
       <div className="max-w-sm">
@@ -34,9 +36,23 @@ const ProjectCard: React.FC<Project> = ({
           <Link href={githubRepo} target="_blank" rel="noopener noreferrer">
             <FaGithub className="h-10 w-10 rounded-full p-2" />
           </Link>
-          <Link href={liveLink} target="_blank" rel="noopener noreferrer">
-            <SquareArrowOutUpRight className="h-10 w-10 p-2 ml-2" />
-          </Link>
+          <Magnetic
+            intensity={0.2}
+            springOptions={springOptions}
+            actionArea="global"
+            range={200}
+          >
+            <Link href={liveLink} target="_blank" rel="noopener noreferrer">
+              <Magnetic
+                intensity={0.1}
+                springOptions={springOptions}
+                actionArea="global"
+                range={200}
+              >
+                <SquareArrowOutUpRight className="h-10 w-10 p-2 ml-2" />
+              </Magnetic>
+            </Link>
+          </Magnetic>
         </div>
       </div>
       <div>

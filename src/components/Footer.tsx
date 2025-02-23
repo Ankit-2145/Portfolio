@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Circle, SmallerCircle } from "@/components/ui/circle";
 import { SocialButtons } from "@/components/ui/socialButtons";
+import { TextShimmer } from "./ui/text-shimmer";
+import { toast } from "sonner";
 
 interface FooterItem {
   name: string;
@@ -19,23 +20,17 @@ const FooterItems: FooterItem[] = [
 ];
 
 export default function Footer() {
-  const [copied, setCopied] = React.useState(false);
   const email = "ankitsharma2615@gmail.com";
 
   const currentYear = new Date().getFullYear();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
-    setCopied(true);
-
-    // Reset copied state after 2 seconds
-    setTimeout(() => setCopied(false), 2000);
+    toast("📋 Copied!");
   };
 
   return (
     <footer className="relative bg-white dark:bg-[#121212] font-OpenSans pt-24 lg:pt-32 overflow-hidden z-20">
-      <SmallerCircle />
-      <Circle className="lg:block" />
       <div className="max-w-6xl xl:mx-auto mx-4 flex flex-col lg:flex-row-reverse justify-between gap-4">
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
@@ -74,14 +69,16 @@ export default function Footer() {
             </div>
           </Button>
           <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-8">
-            <h3 className="text-xl">Let&apos;s Talk</h3>
+            <TextShimmer as="h3" className="block text-base">
+              Let&apos;s Connect
+            </TextShimmer>
+
             <p
               className="inline-flex items-center gap-2 text-sm mt-4 font-FiraCode font-normal text-foreground hover:cursor-pointer hover:underline"
               onClick={handleCopy}
             >
-              <Mail />
-              {email}{" "}
-              {copied && <span className="text-green-500">✔ Copied</span>}
+              <Mail className="h-4 w-4" />
+              {email}
             </p>
           </div>
         </div>
@@ -91,7 +88,7 @@ export default function Footer() {
               Ankit
             </h1>
             <div className="flex justify-between items-start">
-              <p className="text-xl text-secondary-foreground dark:text-muted-foreground font-medium leading-relaxed mt-2">
+              <p className="text-xl text-secondary-foreground dark:text-muted-foreground font-normal leading-relaxed mt-2">
                 Frontend
                 <br /> Developer
               </p>

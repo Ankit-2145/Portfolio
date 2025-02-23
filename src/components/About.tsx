@@ -1,18 +1,21 @@
 "use client";
 
-import type React from "react";
-import Image from "next/image";
-import { motion } from "motion/react";
-import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
+import Image from "next/image";
+import type React from "react";
+import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import { Circle, SmallerCircle } from "@/components/ui/circle";
 
 const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-white dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32"
+      className="relative min-h-screen bg-white dark:bg-[#121212] overflow-hidden font-OpenSans py-24 lg:py-32 z-20"
     >
+      <SmallerCircle className="top-12 left-1/2" />
+      <Circle className="lg:block top-24 left-2/3" />
       <div className="max-w-6xl xl:mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 mx-4">
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
