@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-white dark:bg-[#121212] font-OpenSans pt-24 lg:pt-32 overflow-hidden z-20">
+    <footer className="relative bg-white dark:bg-black font-OpenSans pt-24 lg:pt-32 overflow-hidden z-20">
       <div className="max-w-6xl xl:mx-auto mx-4 flex flex-col lg:flex-row-reverse justify-between gap-4">
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
@@ -55,7 +55,7 @@ export default function Footer() {
             ))}
           </div>
           <Button
-            className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 border bg-[#121212] rounded-full overflow-hidden text-white text-center mt-8"
+            className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 border bg-black rounded-full overflow-hidden text-white text-center mt-8"
             variant="outline"
             aria-label="Download Resume"
           >

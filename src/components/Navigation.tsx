@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   return (
-    <nav className="font-OpenSans bg-white dark:bg-[#121212]">
+    <nav className="font-OpenSans bg-white dark:bg-black">
       <div className="max-w-6xl mx-auto flex justify-between h-16 items-center md:pt-2 px-4">
         {/* Logo / Brand name */}
         <Link href="/" className="flex items-center space-x-2">

@@ -12,7 +12,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen bg-white dark:bg-[#121212] overflow-hidden font-OpenSans py-24 lg:py-32 z-20"
+      className="relative min-h-screen bg-white dark:bg-black overflow-hidden font-OpenSans py-24 lg:py-32 z-20"
     >
       <SmallerCircle className="top-12 left-1/2" />
       <Circle className="lg:block top-24 left-2/3" />
@@ -116,6 +116,7 @@ const About: React.FC = () => {
           layoutId="memoji"
           initial={{ opacity: 0, scale: 0, y: -10 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             delay: 0.5,
             duration: 0.8,

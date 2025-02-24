@@ -1,12 +1,11 @@
 import React from "react";
-import Image from "next/image";
 import { ContactForm } from "./ui/contactForm";
 
 const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-white dark:bg-[#121212] font-OpenSans border-t-2 py-24 lg:py-32"
+      className="min-h-screen bg-white dark:bg-black font-OpenSans border-t-2 py-24 lg:py-32"
     >
       <div className="max-w-6xl mx-4 lg:mx-auto flex justify-between items-center">
         <div>
