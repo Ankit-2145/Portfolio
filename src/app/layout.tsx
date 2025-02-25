@@ -25,7 +25,7 @@ export default function RootLayout({
         >
           <ScrollToTop />
           {children}
-          <Toaster />
+          <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>
     </html>

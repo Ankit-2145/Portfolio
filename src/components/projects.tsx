@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
       <div className="max-w-6xl lg:mx-auto flex flex-col md:flex-row justify-center items-center gap-4 mx-4">
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
-            📁. . . /Featured Projects . . .
+            . . . /Featured Projects . . .
           </h2>
         </div>
       </div>

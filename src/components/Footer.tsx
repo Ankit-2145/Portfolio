@@ -26,15 +26,15 @@ export default function Footer() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
-    toast("📋 Copied!");
+    toast.success("Email Copied!");
   };
 
   return (
-    <footer className="relative bg-white dark:bg-black font-OpenSans pt-24 lg:pt-32 overflow-hidden z-20">
+    <footer className="relative bg-white dark:bg-black font-OpenSans pt-24 lg:pt-32 overflow-hidden">
       <div className="max-w-6xl xl:mx-auto mx-4 flex flex-col lg:flex-row-reverse justify-between gap-4">
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
-            📁. . . /Contacts . . .
+            . . . /Contacts . . .
           </h2>
           <div className="flex justify-start items-start space-x-5 lg:space-x-10 flex-1 mt-8">
             {FooterItems.map((item) => (

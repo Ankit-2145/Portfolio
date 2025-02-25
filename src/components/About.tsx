@@ -20,13 +20,15 @@ const About: React.FC = () => {
       <SmallerCircle className="top-12 left-1/2" />
       <Circle className="lg:block top-24 left-2/3" />
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ y: 10, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.8, ease: "easeIn" }}
+        viewport={{ once: true }}
         className="max-w-6xl xl:mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 mx-4"
       >
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
-            📁. . . /About me . . .
+            . . . /About me . . .
           </h2>
         </div>
         <div className="max-w-2xl">
@@ -163,7 +165,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            delay: 0.5,
+            delay: 0.9,
             duration: 0.8,
             scale: {
               type: "spring",

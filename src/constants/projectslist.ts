@@ -21,7 +21,7 @@ export const projects: Project[] = [
     ],
     liveLink: "https://your-live-link.com",
     githubRepo: "https://github.com/your-repo",
-    image: "/project1.png",
+    image: "/DataNodeUI.png",
   },
   {
     title: "Research Guidance Website",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     technologies: ["React", "Appwrite", "Tailwind CSS"],
     liveLink: "https://your-live-link.com",
     githubRepo: "https://github.com/your-repo",
-    image: "/project1.png",
+    image: "/RealStateLandingPageDesign.jpg",
   },
   {
     title: "Agency Portfolio Website",
