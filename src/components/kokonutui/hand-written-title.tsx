@@ -73,7 +73,7 @@ export default function HandWrittenTitle({ title }: HandWrittenTitleProps) {
       </div>
       <div className="relative z-10">
         <motion.h1
-          className="text-3xl xs:text-4xl lg:text-7xl text-foreground font-medium"
+          className="text-xl text-foreground font-medium"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}

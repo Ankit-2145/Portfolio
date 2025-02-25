@@ -186,7 +186,7 @@ const Hero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.9 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
               className="flex flex-row items-center"
             >
               <ButtonGroup />
@@ -216,7 +216,7 @@ const Hero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.9 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
               className="flex"
             >
               <ButtonGroup />

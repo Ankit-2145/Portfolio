@@ -7,8 +7,11 @@ import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { Circle, SmallerCircle } from "@/components/ui/circle";
+import { Magnetic } from "./ui/magnetic";
 
 const About: React.FC = () => {
+  const springOptions = { bounce: 0.1 };
+
   return (
     <section
       id="about"
@@ -16,7 +19,11 @@ const About: React.FC = () => {
     >
       <SmallerCircle className="top-12 left-1/2" />
       <Circle className="lg:block top-24 left-2/3" />
-      <div className="max-w-6xl xl:mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 mx-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="max-w-6xl xl:mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 mx-4"
+      >
         <div>
           <h2 className="text-xl font-medium leading-relaxed">
             📁. . . /About me . . .
@@ -50,42 +57,74 @@ const About: React.FC = () => {
             using React, Next.js, Tailwind CSS, and Node.js.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center mt-16 lg:mt-24 max-w-6xl mx-4 xl:mx-auto gap-8 lg:gap-0">
         <div className="order-2 lg:order-1 font-medium">
-          <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            viewport={{ once: true }}
+            className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4"
+          >
             <h3 className="text-xl">Front-end</h3>
             <p className="text-sm mt-4 font-FiraCode font-normal">
               HTML / JavaScript / TypeScript / React / Nextjs / Redux Toolkit
             </p>
-          </div>
+          </motion.div>
           <div className="flex items-center mt-4">
-            <div className="w-1/2 border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground">
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="w-1/2 border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground"
+            >
               <h3 className="text-xl">Styles</h3>
               <p className="text-sm mt-4 font-FiraCode font-normal">
                 Tailwind CSS / SCSS / Material-UI / ShadcnUI
               </p>
-            </div>
+            </motion.div>
             <div className="w-fit mx-auto">
-              <Link
-                href="https://github.com/Ankit-2145"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Magnetic
+                intensity={0.2}
+                springOptions={springOptions}
+                actionArea="global"
+                range={200}
               >
-                <span className="flex">
-                  <FaGithub className="h-9 w-9 border rounded-full p-2" />
-                  <ArrowDown className="h-9 w-9 border rounded-full bg-[#121212] dark:bg-[#F5F5F5] text-[#F5F5F5] dark:text-[#121212] -rotate-[120deg] -ml-2 p-2" />
-                </span>
-              </Link>
+                <Link
+                  href="https://github.com/Ankit-2145"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Magnetic
+                    intensity={0.1}
+                    springOptions={springOptions}
+                    actionArea="global"
+                    range={200}
+                  >
+                    <span className="flex">
+                      <FaGithub className="h-9 w-9 border rounded-full p-2" />
+                      <ArrowDown className="h-9 w-9 border rounded-full bg-[#121212] dark:bg-[#F5F5F5] text-[#F5F5F5] dark:text-[#121212] -rotate-[120deg] -ml-2 p-2" />
+                    </span>
+                  </Magnetic>
+                </Link>
+              </Magnetic>
             </div>
           </div>
-          <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4"
+          >
             <h3 className="text-xl">Back-end</h3>
             <p className="text-sm mt-4 font-FiraCode font-normal">
               Node.js / Express / MongoDB / Firebase / RESTful APIs
             </p>
-          </div>
+          </motion.div>
           <div className="flex items-center gap-4">
             <div className="w-full">
               <p className="text-base text-secondary-foreground dark:text-muted-foreground text-left font-normal leading-relaxed">
@@ -103,12 +142,18 @@ const About: React.FC = () => {
                 that I worked with
               </p>
             </div>
-            <div className="w-full border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4">
+            <motion.div
+              initial={{ x: "100%", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 1 }}
+              viewport={{ once: true }}
+              className="w-full border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-4"
+            >
               <h3 className="text-xl">DevOps</h3>
               <p className="text-sm mt-4 font-FiraCode font-normal">
                 Git / GitHub / Netlify / Vercel
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <motion.div
