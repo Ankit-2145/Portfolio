@@ -54,20 +54,18 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-          <Button
+          {/* <Button
             className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 border bg-black rounded-full overflow-hidden text-white text-center mt-8"
             variant="outline"
             aria-label="Download Resume"
           >
             <span className="inline-flex items-center gap-2 translate-y-0 group-hover:-translate-y-12 group-hover:opacity-0 transition-all duration-300">
-              {/* Icon for Resume Download Button */}
               <Download /> Download Resume
             </span>
             <div className="inline-flex items-center gap-2 text-black bg-white z-10 absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
-              {/* Icon for Resume Download Button */}
               <Download /> Download Resume
             </div>
-          </Button>
+          </Button> */}
           <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-8">
             <h3 className="block text-base">
               Don&apos;t like filling forms? Reach out at

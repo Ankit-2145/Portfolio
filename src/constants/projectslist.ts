@@ -5,6 +5,7 @@ export interface Project {
   liveLink: string;
   githubRepo: string;
   image: string;
+  note?: string;
 }
 
 export const projects: Project[] = [
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     title: "School Notice Board CMS",
     description:
       "Developed a robust content management system tailored for school environments, enabling efficient creation and management of notices and announcements. Utilizing Appwrite for backend services and React for the frontend, the system offers secure authentication, real-time updates, and a user-friendly interface.",
+    note: "This project is actively used in a school environment and is not publicly accessible. A demo can be provided upon request.",
     technologies: [
       "React",
       "JavaScript",
@@ -52,21 +54,21 @@ export const projects: Project[] = [
     githubRepo: "https://github.com/Ankit-2145",
     image: "/schoolDashboard.png",
   },
-  {
-    title: "Agency Portfolio Website",
-    description:
-      "A sleek agency website showcasing services in web development, UI/UX, and AI applications.",
-    technologies: [
-      "React",
-      "React-Router",
-      "TypeScript",
-      "Tailwind CSS",
-      "Motion",
-      "Lenis",
-      "Vite",
-    ],
-    liveLink: "https://your-live-link.com",
-    githubRepo: "https://github.com/your-repo",
-    image: "/project1.png",
-  },
+  // {
+  //   title: "Agency Portfolio Website",
+  //   description:
+  //     "A sleek agency website showcasing services in web development, UI/UX, and AI applications.",
+  //   technologies: [
+  //     "React",
+  //     "React-Router",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "Motion",
+  //     "Lenis",
+  //     "Vite",
+  //   ],
+  //   liveLink: "",
+  //   githubRepo: "",
+  //   image: "/project1.png",
+  // },
 ];
