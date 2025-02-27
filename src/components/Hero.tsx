@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/ui/magnetic";
 import { SocialButtons } from "@/components/ui/socialButtons";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { BriefcaseBusiness, ChevronRight, Download } from "lucide-react";
+import { BriefcaseBusiness, ChevronRight } from "lucide-react";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import Link from "next/link";
 
@@ -49,22 +49,6 @@ const Hero: React.FC = () => {
           </Button>
         </Link>
       </Magnetic>
-      {/* <Magnetic>
-        <Button
-          className="group text-xs font-OpenSans relative cursor-pointer px-4 py-2 border bg-white rounded-full overflow-hidden text-black text-center"
-          variant="outline"
-          aria-label="Download Resume"
-        >
-          <span className="inline-flex items-center gap-2 translate-y-0 group-hover:-translate-y-12 group-hover:opacity-0 transition-all duration-300">
-         
-            <Download /> Download Resume
-          </span>
-          <div className="inline-flex items-center gap-2 text-white bg-black z-10 absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
-         
-            <Download /> Download Resume
-          </div>
-        </Button>
-      </Magnetic> */}
     </>
   );
 
