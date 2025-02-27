@@ -124,7 +124,7 @@ const About: React.FC = () => {
           >
             <h3 className="text-xl">Back-end</h3>
             <p className="text-sm mt-4 font-FiraCode font-normal">
-              Node.js / Express / MongoDB / Firebase / RESTful APIs
+              Node.js / Express / MongoDB / Firebase / Appwrite / RESTful APIs
             </p>
           </motion.div>
           <div className="flex items-center gap-4">
