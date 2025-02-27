@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import About from "@/components/About";
 import Projects from "@/components/projects";
-import Feedbacks from "@/components/Feedbacks";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -23,7 +22,6 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
-      <Feedbacks />
       <Contact />
       <Footer />
     </ReactLenis>

@@ -69,17 +69,16 @@ export default function Footer() {
             </div>
           </Button>
           <div className="border border-secondary-foreground dark:border-border rounded-3xl p-4 text-secondary-foreground dark:text-muted-foreground mt-8">
-            <TextShimmer as="h3" className="block text-base">
-              Let&apos;s Connect
-            </TextShimmer>
-
-            <p
+            <h3 className="block text-base">
+              Don&apos;t like filling forms? Reach out at
+            </h3>
+            <span
               className="inline-flex items-center gap-2 text-sm mt-4 font-FiraCode font-normal text-foreground hover:cursor-pointer hover:underline"
               onClick={handleCopy}
             >
               <Mail className="h-4 w-4" />
-              {email}
-            </p>
+              <TextShimmer as="p">{email}</TextShimmer>
+            </span>
           </div>
         </div>
         <div className="font-FiraCode">

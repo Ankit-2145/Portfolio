@@ -56,7 +56,7 @@ const About: React.FC = () => {
             <span className="font-medium italic text-emerald-700 dark:text-emerald-400">
               user-friendly interfaces
             </span>{" "}
-            using React, Next.js, Tailwind CSS, and Node.js.
+            using various modern technologies.
           </p>
         </div>
       </motion.div>
@@ -85,7 +85,7 @@ const About: React.FC = () => {
             >
               <h3 className="text-xl">Styles</h3>
               <p className="text-sm mt-4 font-FiraCode font-normal">
-                Tailwind CSS / SCSS / Material-UI / ShadcnUI
+                CSS / Tailwind CSS / ShadcnUI
               </p>
             </motion.div>
             <div className="w-fit mx-auto">

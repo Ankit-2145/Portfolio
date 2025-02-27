@@ -41,7 +41,7 @@ const ProjectCard: React.FC<Project> = ({
   };
 
   return (
-    <motion.div className="flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse lg:items-start gap-6 first:mt-0 mt-20 lg:mt-44">
+    <motion.div className="flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse lg:items-center gap-6 first:mt-0 mt-20 lg:mt-44">
       <div className="max-w-sm">
         <h3 className="text-foreground text-xl font-medium">{title}</h3>
         <motion.div
@@ -61,7 +61,7 @@ const ProjectCard: React.FC<Project> = ({
             </motion.span>
           ))}
         </motion.div>
-        <p className="text-sm font-normal text-secondary-foreground dark:text-muted-foreground my-16">
+        <p className="text-sm font-normal text-justify text-secondary-foreground dark:text-muted-foreground my-8 leading-normal">
           {description}
         </p>
         <div className="w-fit flex items-center gap-2">
